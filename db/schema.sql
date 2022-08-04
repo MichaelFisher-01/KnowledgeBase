@@ -1,5 +1,4 @@
-DROP DATABASE IF EXISTS knowledgeBase_db;
-
-CREATE DATABASE knowledgeBase_db;
-USE knowledgeBase_db;
+DROP DATABASE IF EXISTS knowledgebase_db;
+CREATE DATABASE knowledgebase_db;
+USE knowledgebase_db;
 
