@@ -11,7 +11,7 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    project_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -20,6 +20,11 @@ Project.init(
     },
     content: {
       type: DataTypes.STRING,
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
