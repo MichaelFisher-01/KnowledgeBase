@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 3001;
 const hbs = exphbs.create({ helpers });
 
 const sess = {
+  //need to add to .env
   secret: "Super secret secret",
   cookie: {},
   resave: false,
