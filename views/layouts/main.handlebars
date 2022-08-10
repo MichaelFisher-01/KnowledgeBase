@@ -1,0 +1,43 @@
+<html lang='en'>
+	<head>
+		<meta charset='UTF-8' />
+		<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<!--Google Fonts-->
+		<link rel='preconnect' href='https://fonts.googleapis.com' />
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+		<link
+			href='https://fonts.googleapis.com/css2?family=Convergence&family=Genos&display=swap'
+			rel='stylesheet'
+		/>
+		<!-- Adding Font Awesome -->
+		<link
+			ref='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css'
+		/>
+		<!-- Link to CSS -->
+		<link rel='stylesheet' href='css/style.css' />
+		<title>Knowledgebase</title>
+	</head>
+	<body>
+		<header>
+			<div class='logo'>Knowledge<span>BASE</span></div>
+			<nav>
+				<ul class='navbar'>
+					<li><a href='/home'>Home</a></li>
+					<li class='dividers'><a href='/newPost'>Create Post</a></li>
+					<li><a href='/Profile'>Profile</a></li>
+				</ul>
+			</nav>
+			<!-- {{#if logged_in}} 
+				<a href='/profile'>profile</a>
+				<button class='no-button' id='logout'>logout</button>
+			{{else}} -->
+				<a href='/login'><button>login</button></a>
+			<!-- {{/if}} -->
+		</header>
+		<main>
+			{{{body}}}
+		</main>
+	</body>
+</html>
