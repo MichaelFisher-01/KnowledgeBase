@@ -1,8 +1,85 @@
+:root {
+	--color-bg: white;
+	--color-opt1: #004346;
+	--color-opt2: #508991;
+	--color-light: #74b3ce;
+	--color-light2: #09bc8a;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+html {
+	/*font-family: 'Genos';*/
+	font-family: 'Convergence';
+}
+
+body {
+	background-color: var(--color-bg);
+}
+
+li,
+a,
+button {
+	color: var(--color-light);
+	font-size: 16px;
+}
+
+.logo {
+	color: var(--color-opt2);
+	font-size: 24px;
+}
+
+.logo span {
+	color: var(--color-light2);
+	font-family: 'Genos';
+	font-size: 28px;
+}
+
+h2 {
+	color: var(--color-light2);
+}
+
+header {
+	background-color: var(--color-opt1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+}
+
+.navbar li {
+	display: inline-block;
+	padding: 0px 15px;
+	transition: all 0.3s ease 0s;
+}
+
+.navbar li a:hover {
+	color: white;
+}
+
+button {
+	padding: 4px 8px;
+	border-radius: 50px;
+	transition: all 0.3s ease 0s;
+	border: none;
+}
+
+button:hover {
+	background-color: var(--color-light);
+	color: white;
+}
+
 #comment-box,
 #post {
-  border: none;
-  border-radius: 5px;
+	border: none;
+	border-radius: 5px;
 }
 #post:hover {
-  background-color: deeppink;
+	background-color: deeppink;
 }

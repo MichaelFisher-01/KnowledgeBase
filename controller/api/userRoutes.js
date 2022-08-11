@@ -5,9 +5,9 @@ router.post("/", async (req, res) => {
   try {
     const loginData = await User.create(req.body);
 
-    req.session.save(() => {
-      req.session.user_id = loginData.id;
-      req.session.logged_in = true;
+    req.user.save(() => {
+      req.user.user_id = loginData.id;
+      req.user.logged_in = true;
 
       res.status(200).json(loginData);
     });
@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/login", async (req, res) => {
+router.post("./login", async (req, res) => {
   try {
     const loginData = await User.findOne({
       where: { username: req.body.username },
@@ -45,7 +45,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.post("/logout", (req, res) => {
+router.post("./logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(200).end();
