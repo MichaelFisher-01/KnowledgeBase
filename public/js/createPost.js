@@ -31,6 +31,7 @@ const sendToDb = () => {
 		text: postText.value,
 		Img: postImg.value,
 	};
+	console.log('sendToDB was successful');
 	sendPost(newPost);
 };
 
