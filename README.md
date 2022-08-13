@@ -29,25 +29,25 @@ You can access more badges and their purposes at [shields.io](https://shields.io
   
   _Contact Info:_
 
-  GitHub: [Eddie-11](https://github.com/Eddie-11)
+Eddie Monarrez
+* GitHub: [Eddie-11](https://github.com/Eddie-11)
+* Email: [emonarrez.01](mailto:emonarrez.01)
 
-  Email: [emonarrez.01](mailto:emonarrez.01)
+Brandon Okman
+* GitHub: https://github.com/BrandonOkman
+* Email: brandonokman@gmail.com
 
-  Github:
+Cooper Van Auken
+* Github: https://github.com/cvanauken
+* Email: Coopervanauken@gmail.com
 
-  Email:
-  
-  Github:
+Michael Fisher
+* Github: https://github.com/MichaelFisher-01
+* Email: Fisherdesign3@gmail.com
 
-  Email:
-
-  Github:
-
-  Email:
-
-  Github:
-  
-  Email:
+Solen Iyassu
+* Github: https://github.com/SolenIyassu
+* Email: Solen.Iyassu@gmail.com
 
     
 ## License
