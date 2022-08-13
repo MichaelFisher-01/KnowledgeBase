@@ -30,12 +30,12 @@ You can access more badges and their purposes at [shields.io](https://shields.io
   _Contact Info:_
 
 Eddie Monarrez
-* GitHub: [Eddie-11](https://github.com/Eddie-11)
-* Email: [emonarrez.01](mailto:emonarrez.01)
+* GitHub: https://github.com/Eddie-M11
+* Email: Emonarrez.01@outlook.com
 
 Brandon Okman
 * GitHub: https://github.com/BrandonOkman
-* Email: brandonokman@gmail.com
+* Email: Brandonokman@gmail.com
 
 Cooper Van Auken
 * Github: https://github.com/cvanauken
