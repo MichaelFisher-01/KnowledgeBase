@@ -1,26 +1,33 @@
-Knowlegde Base
-Description
+# Knowlegde Base
+
+## Description
+
 Knowledge Base in a web application that everyone can use to be able to create a page about literally anything! If you like to cook and want to show off your cooking skill or recipe just create a page for everyone to see. If you are a mechanic and want to show people how to change that part on your car, create a page and show everyone step by step. Want to talk about your favorite artist or famous personality? Create a blog post and talk about them and allow people to comment on your post so people can continue the conversation.
 
-badge
+![badge](https://img.shields.io/badge/license-MITLicense-brightorange)
 
-You can access more badges and their purposes at shields.io
+You can access more badges and their purposes at [shields.io](https://shields.io)
 
-Table of Contents
-Usage
-Questions
-License
-Usage
-Instructions for use:
+## Table of Contents
+  * [Usage](#usage)
+  * [Questions](#questions)
+  * [License](#license)
+    
+    
+      
+## Usage
 
-In order to use the application you can create an account and then from there you can visit the create a post tab and create a post about whatever you want
+  _Instructions for use:_
 
-Questions
-For further questions:
+  In order to use the application you can create an account and then from there you can visit the create a post tab and create a post about whatever you want
+      
+## Questions
+      
+  _For further questions:_
 
-If you wish to contact me or any of the other developers send an email.
-
-Contact Info:
+  If you wish to contact me or any of the other developers send an email.
+  
+  _Contact Info:_
 
 Eddie Monarrez
 * GitHub: https://github.com/Eddie-M11
@@ -42,8 +49,12 @@ Solen Iyassu
 * Github: https://github.com/SolenIyassu
 * Email: Solen.Iyassu@gmail.com
 
+    
+## License
 
-License
-This application has the MIT License.
-
-For more information please view the license description.
+      
+  _This application has the MIT License._
+      
+  For more information please view the [license description](https://choosealicense.com/licenses/mit/).
+  
+  
