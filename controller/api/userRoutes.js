@@ -25,20 +25,22 @@ router.post('/validate', async (req, res) => {
 				userName: req.body.userName,
 			},
 		});
-		console.log(findUser);
 		if (!findUser) {
 			console.log('error with username');
 			res.status(400).json({ message: 'Username does not exist' });
 			return;
 		}
-		console.log('username checks out');
-		//const passCheck = await findUser.checkPassword(req.body.password);
+		if (req.body.password === findUser.password) {
+			passCheck = true;
+		} else {
+			passCheck = false;
+		}
 
-		// if (!passCheck) {
-		// 	console.log('error with password');
-		// 	res.status(400).json({ message: 'Incorrect Log In credentials' });
-		// 	return;
-		// }
+		if (!passCheck) {
+			console.log('error with password');
+			res.status(400).json({ message: 'Incorrect Log In credentials' });
+			return;
+		}
 		console.log('password checks out');
 		req.session.save(() => {
 			req.session.loggedIn = true;
@@ -46,6 +48,16 @@ router.post('/validate', async (req, res) => {
 		});
 	} catch (error) {
 		console.error(error);
+	}
+});
+
+router.post('/logout', (req, res) => {
+	if (req.session.loggedIn) {
+		req.session.destroy(() => {
+			res.status(204).end();
+		});
+	} else {
+		res.status(404).end();
 	}
 });
 

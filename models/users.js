@@ -2,6 +2,8 @@
 const { Model, DataTypes } = require('sequelize');
 //Bringing in the database connection informaiton
 const sequelize = require('../config/connection');
+//Adding Bcrypt to encrypt our database passwords
+const bcrypt = require('bcrypt');
 
 //Creating a Model(table) with the name Users
 class Users extends Model {}
@@ -31,6 +33,12 @@ Users.init(
 		},
 	},
 	{
+		hooks: {
+			async beforeCreate(newUser) {
+				newUser.password = await bcrypt.hash(newUser.password, 7);
+				return newUser;
+			},
+		},
 		//Database connection
 		sequelize,
 		//Timestamp data is not necessary on this table
