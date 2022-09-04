@@ -1,52 +1,23 @@
-<div class="row content-center">
-  <div class="col-auto">
-    <h1> Hello welcome to your page, {{name}}! </h1>
-  </div>
+<h1>{{userName}}</h1>
+<!-- Section for the logged in user to create a new post for the webstie -->
+<div id='createPost'>
+	<div class='newPost'><h3>Create a Post!</h3></div>
+	<form id='newPostForm'>
+		<label for="'title">Post title:</label>
+		<input type='text' id='title' />
+		<br />
+		<label for='description'>Tell everything about this suject: </label>
+		<input type='text' id='description' />
+		<br />
+		<label for='image'>Add a picture related to your post!</label>
+		<input type='file' id='image' appect='image/' />
+		<br />
+		<button type='submit'>Submit</button>
+	</form>
+</div>
+<!-- Section to see previous posts you have created -->
+<div id='previousPosts'>
+
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create New Post:</h3>
-
-    <form class="form new-post-form">
-      <div class="form-group">
-        <label for="post-title">Post title:</label>
-        <input
-          class="form-input"
-          type="text"
-          id="post-title"
-          name="post-title"
-        />
-      </div>
-      <div class="form-group">
-        <label for="post-text">Quick Descritpion of your page:</label>
-        <input
-          class="form-input"
-          type="number"
-          id="post-text"
-          name="post-text"
-        />
-      </div>
-      <div class="form-group">
-        <label for="post-text">Talk about your post:</label>
-        <input
-          class="form-input"
-          type="number"
-          id="post-text"
-          name="post-text"
-        />
-      </div>
-      <div class="form-group">
-        <label for="post-image">link image here:</label>
-        <textarea
-          class="form-input"
-          id="post-image"
-          name="post-image"
-        ></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
-    </form>
-  </div>
-</div>
+<script src='./js/createPost.js'></script>

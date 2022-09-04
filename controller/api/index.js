@@ -1,9 +1,8 @@
+//Bringing in the router portion of the express library
 const router = require('express').Router();
+
 const userRoutes = require('./userRoutes');
-const postRouter = require('./postRoutes');
 
-router.use('/users', userRoutes);
-router.use('/newPost', postRouter);
-
+router.use('/user', userRoutes);
 
 module.exports = router;

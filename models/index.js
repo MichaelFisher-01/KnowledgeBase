@@ -1,20 +1,15 @@
+//Grabbing the different models that were created
+const Users = require('./users');
+const Posts = require('./posts');
 
-const User = require('./User');
-const Project = require('./Project');
-const NewPost = require('./userPost');
-const Page = require("./Page");
-
-User.hasMany(Project, {
-	foreignKey: 'user_id',
-	onDelete: 'CASCADE',
+//Linking the models that were created
+Users.hasMany(Posts, {
+	foreignKey: 'id',
 });
 
-Project.belongsTo(User, {
-	foreignKey: 'user_id',
+Posts.belongsTo(Users, {
+	foreignKey: 'postCreator',
 });
 
-Page.belongsTo(User, {
-  foreignKey: "user_id",
-});
-
-module.exports = { User, Project, NewPost };
+//Exporting the Users and Posts models for use in other documents
+module.exports = { Users, Posts };

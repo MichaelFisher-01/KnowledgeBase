@@ -1,25 +1,22 @@
-const router = require("express").Router();
+//Grabbing just the router files from the express library.
+const router = require('express').Router();
+//Grabbing the exports from the homeRoutes.js
+const homeRoutes = require('./homeRoutes');
+//Grabbing the exports from profileRoutes
+const profileRoutes = require('./profileRoutes');
+//Grabbing the login routes that were created
+const loginRoutes = require('./loginRoutes');
+//Grabbing all the routes in the API folder (these should handle database changes)
+const api = require('./api');
 
-const apiRoutes = require("./api");
+//Assignign the homeRoutes to the address followed by no information
+router.use('/', homeRoutes);
+//Assigning the profile routes to the address followed by /profile
+router.use('/profile', profileRoutes);
+//Assigning the loginRoutes information to the address followed by /login
+router.use('/login', loginRoutes);
+//Assigning the api routes to the address followed by /api
+router.use('/api', api);
 
-router.use("/api", apiRoutes);
-
-router.get('/home', (req, res) => {
-	imageList = [];
-	imageList.push({
-		src: './public/reasources/mountains.jpg',
-		name: 'mountains',
-	});
-	imageList.push({
-		src: './public/reasources/mountains2.jpg',
-		name: 'mountains 2',
-	});
-	res.render('mountains 2', { imageList: imageList });
-	imageList.push({
-		src: './public/reasources/mountains3.jpg',
-		name: 'mountains3',
-	});
-	res.render('mountains3', { imageList: imageList });
-});
-
+//Exporting the router for use in server.js
 module.exports = router;

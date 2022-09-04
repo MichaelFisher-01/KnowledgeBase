@@ -1,50 +1,34 @@
-<div class='row'>
-	<div class='col-md-6'>
-		<h2>Login</h2>
-
-		<form class='form login-form'>
-			<div class='form-group'>
-				<label for='email-login'>Username:</label>
-				<input class='form-input' type='text' id='username-login' />
-			</div>
-			<div class='form-group'>
-				<label for='email-login'>Password:</label>
-				<input class='form-input' type='password' id='password-login' />
-			</div>
-			<div class='form-group'>
-				<button class='btn btn-primary' type='submit' id='logIn'>Login</button>
-			</div>
+<div class='container'>
+	<!-- Log in options in thier own div -->
+	<div class='createUser'>
+		<div id='logInTitle'><h3>Login: </h3></div>
+		<form id='loginForm'>
+			<label for='userName'>UserName: </label>
+			<input type='text' id='userName' />
+			<br />
+			<label for='loginPassword'>Password: </label>
+			<input type='password' id='loginPassword' />
+			<br />
+			<button type='submit' id='loginBtn'>Login</button>
 		</form>
 	</div>
-	<div class='col-md-6'>
-		<h2>Signup</h2>
-
-		<form class='form signup-form'>
-			<div class='form-group'>
-				<label for='email-signup'>First Last Name:</label>
-				<input class='form-input' type='text=' id='name-signup' />
-			</div>
-			<div class='form-group'>
-				<label for='email-signup'>Username:</label>
-				<input class='form-input' type='text=' id='username-signup' />
-			</div>
-			<div class='form-group'>
-				<label for='email-signup'>Email:</label>
-				<input class='form-input' type='text=' id='email-signup' />
-			</div>
-			<div class='form-group'>
-				<label for='email-signup'>Password:</label>
-				<input class='form-input' type='text=' id='password-signup' />
-			</div>
-			<div class='form-group'>
-				<button
-					class='btn btn-primary'
-					type='submit'
-					id='signUp'
-				>Signup</button>
-			</div>
+	<!-- Options for creating a new user in their own div -->
+	<div class='login'>
+		<div id='createAccountTitle'><h3>Create Account:</h3></div>
+		<br />
+		<form id='newUserForm'>
+			<label for='newEmail'>Email: </label>
+			<input type="'text" id='newEmail' />
+			<br />
+			<label for='newUser'>UserName: </label>
+			<input type='text' id='newUser' />
+			<br />
+			<label for='newPass'>Password: </label>
+			<input type='password' id='newPass' />
+			<br />
+			<button type='submit'>Submit</button>
 		</form>
 	</div>
 </div>
-
-<script src='./js/login.js'></script>
+<!-- Pulling in the javascript in the public folder to take actions based on which submit button is pressed -->
+<script src='./js/loginPage.js'></script>

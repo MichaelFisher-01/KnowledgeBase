@@ -19,7 +19,6 @@
 
 		<!-- Addidng Bootstrap -->
 		<meta charset='utf-8' />
-		<!--Make Parties-->
 		<!-- Latest compiled and minified CSS -->
 		<link
 			rel='stylesheet'
@@ -28,7 +27,6 @@
 
 		<!-- Link to CSS -->
 		<link rel='stylesheet' href='css/style.css' />
-		<script src='./public/js/createPost.js'></script>
 		<title>Knowledgebase</title>
 	</head>
 	<body>
@@ -36,18 +34,17 @@
 			<div class='logo'>Knowledge<span>BASE</span></div>
 			<nav>
 				<ul class='navbar'>
-					<li><a href='/home'>Home</a></li>
-					<li class='dividers'><a href='/newPost'>Create Post</a></li>
-					<li><a href='/Profile'>Profile</a></li>
+					<li><a href='/'>Home</a></li>
+					{{#if loggedIn}}
+						<li><a href='/profile'>Profile</a></li>
+					{{/if}}
 				</ul>
 			</nav>
-			<!-- {{#if logged_in}} 
-
-				<a href='/profile'>profile</a>
-				<button class='no-button' id='logout'>logout</button>
-			{{else}} -->
+			{{#if loggedIn}}
+				<a href='/api/user/logout'><button id='logout'>logout</button></a>
+			{{else}}
 				<a href='/login'><button>login</button></a>
-			<!-- {{/if}} -->
+			{{/if}}
 		</header>
 		<main>
 			{{{body}}}
@@ -56,6 +53,9 @@
 		<script
 			src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
 		></script>
+		{{#if loggedIn}}
+			<script src='/js/logout.js'></script>
+		{{/if}}
 	</body>
 
 </html>
