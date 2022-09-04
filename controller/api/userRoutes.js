@@ -25,8 +25,9 @@ router.post('/validate', async (req, res) => {
 				userName: req.body.userName,
 			},
 		});
+		console.log(findUser);
+		console.log('THE USER ID IS CURRENTLY: ' + findUser.id);
 		if (!findUser) {
-			console.log('error with username');
 			res.status(400).json({ message: 'Username does not exist' });
 			return;
 		}
@@ -37,14 +38,17 @@ router.post('/validate', async (req, res) => {
 		}
 
 		if (!passCheck) {
-			console.log('error with password');
 			res.status(400).json({ message: 'Incorrect Log In credentials' });
 			return;
 		}
-		console.log('password checks out');
+
 		req.session.save(() => {
 			req.session.loggedIn = true;
-			res.status(200).json({ message: 'Successfully Logged In' });
+			req.session.userName = findUser.userName;
+			req.session.userId = findUser.id;
+			res
+				.status(200)
+				.json({ user: findUser, message: 'Successfully Logged In' });
 		});
 	} catch (error) {
 		console.error(error);

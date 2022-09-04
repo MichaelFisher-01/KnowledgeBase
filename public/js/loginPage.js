@@ -58,9 +58,9 @@ const loginUser = async (event) => {
 			headers: { 'Content-Type': 'application/json' },
 		});
 		if (validate.ok) {
+			document.location.replace('/profile');
 			console.log('Log In Successful!');
 		} else {
-			console.log(validate);
 			console.log('Log In Failed');
 		}
 	}
