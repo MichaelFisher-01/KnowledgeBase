@@ -1,7 +1,7 @@
 //Grabbing the model files and the different datatypes from the sequilize library
-const { Model, DataTypes } = require('sequilize');
+const { Model, DataTypes } = require('sequelize');
 //Grabbing the database connection information
-const sequelize = require('..config/connection');
+const sequelize = require('../config/connection');
 
 //Creating a Model(table) called Posts
 class Posts extends Model {}
@@ -28,8 +28,12 @@ Posts.init(
 			allowNull: false,
 		},
 		postCreator: {
-			type: DataTypes.STRING,
-			allowNull: true,
+			type: DataTypes.INTEGER,
+			allowNull: false,
+			references: {
+				model: 'users',
+				key: 'id',
+			},
 		},
 	},
 	//model settings
