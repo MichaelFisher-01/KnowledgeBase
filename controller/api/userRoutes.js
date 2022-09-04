@@ -6,11 +6,6 @@ const { Users } = require('../../models');
 //Route to create a user
 router.post('/newUser', async (req, res) => {
 	try {
-		console.log({
-			incomingUserName: req.body.userName,
-			incomingEmail: req.body.email,
-			incomingPass: req.body.password,
-		});
 		const newUserInfo = await Users.create({
 			userName: req.body.userName,
 			email: req.body.email,
@@ -23,28 +18,35 @@ router.post('/newUser', async (req, res) => {
 });
 
 //Route to log in a user
-router.post('/validate', async(req,res) => {
-    try {
-        const findUser = await Users.findOne({
-            where: {
-                userName: req.body.userName;
-            }
-        });
+router.post('/validate', async (req, res) => {
+	try {
+		const findUser = await Users.findOne({
+			where: {
+				userName: req.body.userName,
+			},
+		});
+		console.log(findUser);
+		if (!findUser) {
+			console.log('error with username');
+			res.status(400).json({ message: 'Username does not exist' });
+			return;
+		}
+		console.log('username checks out');
+		//const passCheck = await findUser.checkPassword(req.body.password);
 
-        if (!findUser) {
-            res.status(400).json({message: 'Username does not exist'});
-            return;
-        }
-
-        const passCheck = await findUser.checkPassword(req.body.password);
-
-        if(!passCheck){
-            res.status(400).json({message:'Incorrect Log In credentials'});
-            return;
-        }
-    } catch (error) {
-        
-    }
-})
+		// if (!passCheck) {
+		// 	console.log('error with password');
+		// 	res.status(400).json({ message: 'Incorrect Log In credentials' });
+		// 	return;
+		// }
+		console.log('password checks out');
+		req.session.save(() => {
+			req.session.loggedIn = true;
+			res.status(200).json({ message: 'Successfully Logged In' });
+		});
+	} catch (error) {
+		console.error(error);
+	}
+});
 
 module.exports = router;

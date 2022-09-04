@@ -30,7 +30,6 @@ const createUser = async (event) => {
 
 		if (creation.ok) {
 			newUserForm.reset();
-
 			statusEl.innerText = 'User Successfully Created';
 			document.querySelector('#createAccountTitle').appendChild(statusEl);
 		} else {
@@ -49,6 +48,9 @@ const loginUser = async (event) => {
 	userName = userNameEl.value;
 	password = passwordEl.value;
 
+	console.log(userName);
+	console.log(password);
+
 	if (userName && password) {
 		const validate = await fetch('api/user/validate', {
 			method: 'POST',
@@ -56,8 +58,9 @@ const loginUser = async (event) => {
 			headers: { 'Content-Type': 'application/json' },
 		});
 		if (validate.ok) {
-			console.log('Successful Log In!');
+			console.log('Log In Successful!');
 		} else {
+			console.log(validate);
 			console.log('Log In Failed');
 		}
 	}

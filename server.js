@@ -16,6 +16,14 @@ const hbs = exphbs.create({});
 const path = require('path');
 //Intializing Express
 const app = express();
+//Grabbing the session library
+const session = require('express-session');
+//Creating information for the session to use for security and some settings
+const sess = {
+	secret: 'Super secret stuff',
+	resave: false,
+	saveUninitilized: true,
+};
 
 //Setting up the port that will be used default is 3001 or the user and input whatever they like in the .env file
 const PORT = process.env.PORT || 3001;
@@ -25,6 +33,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 //Setting up middleware
+app.use(session(sess));
 //Setting up to allow for parsing incoming requests with json
 app.use(express.json());
 //Setting up all files in the public folder so they can be accessed by our handlebar views.
