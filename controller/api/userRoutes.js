@@ -25,17 +25,12 @@ router.post('/validate', async (req, res) => {
 				userName: req.body.userName,
 			},
 		});
-		console.log(findUser);
-		console.log('THE USER ID IS CURRENTLY: ' + findUser.id);
 		if (!findUser) {
 			res.status(400).json({ message: 'Username does not exist' });
 			return;
 		}
-		if (req.body.password === findUser.password) {
-			passCheck = true;
-		} else {
-			passCheck = false;
-		}
+
+		const passCheck = await findUser.checkPassword(req.body.password);
 
 		if (!passCheck) {
 			res.status(400).json({ message: 'Incorrect Log In credentials' });

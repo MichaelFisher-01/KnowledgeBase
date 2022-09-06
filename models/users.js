@@ -6,7 +6,11 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
 //Creating a Model(table) with the name Users
-class Users extends Model {}
+class Users extends Model {
+	checkPassword(password) {
+		return bcrypt.compareSync(password, this.password);
+	}
+}
 
 //Setting parameters of the Users mode
 Users.init(

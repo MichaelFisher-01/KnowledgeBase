@@ -3,9 +3,6 @@ const newUserForm = document.querySelector('#newUserForm');
 const logInForm = document.querySelector('#loginForm');
 const statusEl = document.createElement('p');
 
-console.log(newUserForm);
-console.log(logInForm);
-
 const createUser = async (event) => {
 	event.preventDefault();
 	console.log('Processing New User Request...');
@@ -47,9 +44,6 @@ const loginUser = async (event) => {
 
 	userName = userNameEl.value;
 	password = passwordEl.value;
-
-	console.log(userName);
-	console.log(password);
 
 	if (userName && password) {
 		const validate = await fetch('api/user/validate', {

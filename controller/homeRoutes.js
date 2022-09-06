@@ -14,7 +14,9 @@ router.get('/', async (req, res) => {
 		});
 
 		if (!allPosts) {
-			res.render('home', { loggedIn: req.session.loggedIn });
+			res.render('home', {
+				loggedIn: req.session.loggedIn,
+			});
 		} else {
 			const postsInfo = allPosts.map((post) => post.get({ plain: true }));
 			res.render('home', { postsInfo, loggedIn: req.session.loggedIn });
