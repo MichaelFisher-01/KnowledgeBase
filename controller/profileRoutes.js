@@ -4,13 +4,13 @@ const router = require('express').Router();
 
 router.get('/', authentication, async (req, res) => {
 	try {
-		console.log(`LOOKING FOR USER ID: ${req.session.userId}`);
 		const userInfo = await Users.findByPk(req.session.userId, {
 			attributes: { exclude: ['password'] },
+			include: [{ model: Posts }],
 		});
 
 		const currentUser = userInfo.get({ plain: true });
-
+		console.log(currentUser);
 		res.render('profile', {
 			...currentUser,
 			loggedIn: req.session.loggedIn,

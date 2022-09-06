@@ -83,3 +83,17 @@ button:hover {
 #post:hover {
 	background-color: deeppink;
 }
+
+img {
+	max-width: 500px;
+	max-height: 500px;
+}
+
+.displayArea {
+	width: 50%;
+}
+
+.descriptionText {
+	width: 500px;
+	height: 100px;
+}
