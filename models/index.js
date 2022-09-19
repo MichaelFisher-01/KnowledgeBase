@@ -4,7 +4,7 @@ const Posts = require('./posts');
 
 //Linking the models that were created
 Users.hasMany(Posts, {
-	foreignKey: 'id',
+	foreignKey: 'postCreator',
 });
 
 Posts.belongsTo(Users, {

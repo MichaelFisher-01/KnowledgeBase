@@ -46,7 +46,7 @@ router.post('/validate', async (req, res) => {
 				.json({ user: findUser, message: 'Successfully Logged In' });
 		});
 	} catch (error) {
-		console.error(error);
+		res.status(500).json(error);
 	}
 });
 

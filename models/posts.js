@@ -5,7 +5,6 @@ const sequelize = require('../config/connection');
 
 //Creating a Model(table) called Posts
 class Posts extends Model {}
-
 //Defining the parameters of the Model
 Posts.init(
 	{
@@ -23,9 +22,12 @@ Posts.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		imageUrl: {
+		imageLocation: {
 			type: DataTypes.STRING,
 			allowNull: false,
+		},
+		imageName: {
+			type: DataTypes.STRING,
 		},
 		postCreator: {
 			type: DataTypes.INTEGER,

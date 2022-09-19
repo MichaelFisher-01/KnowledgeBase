@@ -1,11 +1,9 @@
 //Allowing for use of .env file variables
 require('dotenv').config();
-
 //Grabbing the experss library
 const express = require('express');
 //Grabbing routers from out controller folder
 const routes = require('./controller');
-
 //grabbing the information for database connection
 const sequelize = require('./config/connection');
 //Grabbing the handlesbars library
@@ -18,11 +16,16 @@ const path = require('path');
 const app = express();
 //Grabbing the session library
 const session = require('express-session');
+const SequelizeSessions = require('connect-session-sequelize')(session.Store);
 //Creating information for the session to use for security and some settings
 const sess = {
 	secret: 'Super secret stuff',
+	cookie: { maxAge: 3600000 },
 	resave: false,
 	saveUninitilized: true,
+	store: new SequelizeSessions({
+		db: sequelize,
+	}),
 };
 
 //Setting up the port that will be used default is 3001 or the user and input whatever they like in the .env file
