@@ -27,25 +27,26 @@ imageEl.addEventListener('change', showImage);
 
 const createPost = async (event) => {
 	event.preventDefault();
-	const titleEl = document.querySelector('#title');
-	const descriptionEl = document.querySelector('#description');
+	const form = event.currentTarget;
+	const title = document.querySelector('#title').value.trim();
+	const description = document.querySelector('#description').value.trim();
+	const imageUpload = document.querySelector('#image');
+	console.log(imageUpload);
 
-	const title = titleEl.value;
-	const description = descriptionEl.value;
-	const imageData = imageEl.files[0];
-
-	if (title && description && imageData) {
+	if (title && description) {
 		try {
-			console.log(`${title}, ${description}, ${imageData}`);
-
+			console.log(imageUpload.files);
+			const location = imageUpload.files[0].name;
+			const imageLocation = `./public/images/${location}`;
+			const formData = new FormData(form);
+			formData.append('image', imageUpload.files[0]);
+			formData.append('postTitle', title);
+			formData.append('postInfo', description);
+			formData.append('imageLocation', imageLocation);
+			formData.append('imageName', location);
 			const createPost = await fetch('/api/post/create', {
 				method: 'POST',
-				body: JSON.stringify({
-					postTitle: `${title}`,
-					postInfo: `${description}`,
-					imgSrc: `${imageData}`,
-				}),
-				headers: { 'Content-Type': 'application/json' },
+				body: formData,
 			});
 
 			if (createPost.ok) {
